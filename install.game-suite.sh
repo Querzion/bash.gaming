@@ -63,6 +63,7 @@ read choice
 if [ "$choice" = "Y" ]; then
     echo "Starting installation of Lutris..."
     flatpak install flathub net.lutris.Lutris
+    
 elif [ "$choice" = "N" ]; then
     echo "Skipping installation of Lutris."
 else
@@ -90,7 +91,6 @@ if [ "$choice" = "Y" ]; then
     echo "Starting installation of Steam, Proton-GE & ProtonTricks..."
     ./scripts/install.steam.sh
     flatpak install flathub org.gabmus.protonupqt com.github.Matoking.protontricks
-
 elif [ "$choice" = "N" ]; then
     echo "Skipping installation of Steam, Proton-GE & ProtonTricks."
 else
@@ -110,18 +110,6 @@ else
     echo "Invalid choice. Please enter 'Y' or 'N'."
 fi
 
-########### STAR CITIZEN
-echo "Do you want to install Star Citizen Launcher? (Y/N)"
-read choice
-
-if [ "$choice" = "Y" ]; then
-    echo "Starting installation of Final Fantasy XIV Launcher..."
-    ./scripts/install.starcitizen.sh
-elif [ "$choice" = "N" ]; then
-    echo "Skipping installation of Final Fantasy XIV Launcher."
-else
-    echo "Invalid choice. Please enter 'Y' or 'N'."
-fi
 
 ########### EMUDECK - EMULATION SUITE
 echo "Do you want to install EmuDeck? (Y/N)"
@@ -171,6 +159,32 @@ if [ "$choice" = "Y" ]; then
     flatpak install flathub com.discordapp.Discord
 elif [ "$choice" = "N" ]; then
     echo "Skipping installation of Discord."
+else
+    echo "Invalid choice. Please enter 'Y' or 'N'."
+fi
+
+########### STAR CITIZEN
+echo "THIS IS THE LAST PART OF THE SCRIPT QUESTIONS!"
+echo "Do you want to install Star Citizen? (Y/N)"
+read choice
+
+if [ "$choice" = "Y" ]; then
+    echo "Starting installation of Star Citizen..."
+    #./scripts/install.starcitizen.sh #Does not work, follow a guide!
+    #######################
+    echo "Do you want to open the YouTube link with the installation guide? (Y/N)"
+    read choice
+
+    if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
+        xdg-open "https://www.youtube.com/watch?v=6ZbeN4zVYyE"
+    elif [ "$choice" == "N" ] || [ "$choice" == "n" ]; then
+        echo "You chose not to open the link."
+    else
+        echo "Invalid choice. Please choose Y or N."
+    fi
+    #######################
+elif [ "$choice" = "N" ]; then
+    echo "Skipping installation of Star Citizen."
 else
     echo "Invalid choice. Please enter 'Y' or 'N'."
 fi
