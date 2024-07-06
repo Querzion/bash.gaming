@@ -112,7 +112,7 @@ fi
 
 
 ########### EMUDECK - EMULATION SUITE
-echo "Do you want to install EmuDeck? (Y/N)"
+echo "Do you want to install EmuDeck? (NOT DONE YET) (Y/N)"
 read choice
 
 if [ "$choice" = "Y" ]; then
