@@ -1,5 +1,8 @@
 #!/bin/bash
 
+RED='\033[0;31m' # ANSI red color code
+NC='\033[0m'     # ANSI reset code
+
 # Get the current value of map_max_count
 current_value=$(sysctl -n vm.max_map_count)
 
@@ -140,7 +143,8 @@ fi
 
 
 ########### EMUDECK - EMULATION SUITE
-echo "Do you want to install EmuDeck? (NOT DONE YET) (Y/N)"
+echo "Do you want to install EmuDeck? (Y/N)"
+echo -e "${RED}THIS SCRIPT IS NOT COMPLETE CHOOSE (N)${NC}"
 read choice
 
 if [ "$choice" = "Y" ]; then
@@ -194,7 +198,8 @@ fi
 ########### STAR CITIZEN
 echo "THIS IS THE LAST PART OF THE SCRIPT QUESTIONS!"
 echo "Do you want to install Star Citizen? (Y/N)"
-echo "If you installed through Lutris press (N) "
+echo -e "${RED}THIS IS A MANUAL INSTALL OF STAR CITIZEN SO,${NC}"
+echo -e "${RED}IF YOU INSTALLED THIS THROUGH LUTRIS PRESS (N)${NC}"
 read choice
 
 if [ "$choice" = "Y" ]; then
