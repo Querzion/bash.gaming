@@ -23,7 +23,7 @@ else
 fi
 
 # Setup Wineprefix
-WINEPREFIX=~/.wineAffinity
+WINEPREFIX=~/.wineprefix
 mkdir -p $WINEPREFIX
 export WINEPREFIX
 
@@ -34,15 +34,15 @@ wineboot --init
 winetricks win11
 
 # Install components using winetricks
-winetricks --force dotnet48 vcrun2015 corefonts
+winetricks --force dotnet35sp1 dotnet48 vcrun2015 corefonts
 
 # Define source and destination paths
-SOURCE_DIR="$HOME/bash.game-suite/.wineAffinity/WinMetaData"
-DEST_DIR="$HOME/.wineAffinity"
+SOURCE_DIR="$HOME/bash.game-suite/.wineprefix/WinMetaData"
+DEST_DIR="$HOME/.wineprefix"
 
 # Check if source directory exists
 if [ -d "$SOURCE_DIR" ]; then
-    # Move WinMetaData to .wineAffinity directory
+    # Move WinMetaData to .wineprefix directory
     mv -v "$SOURCE_DIR" "$DEST_DIR"
     echo "Successfully moved WinMetaData to $DEST_DIR"
 else
