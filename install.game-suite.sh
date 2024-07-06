@@ -103,7 +103,7 @@ read choice
 
 if [ "$choice" = "Y" ]; then
     echo "Starting installation of Final Fantasy XIV Launcher..."
-    ./scripts/install.ffxiv.sh
+    flatpak install flathub dev.goats.xivlauncher
 elif [ "$choice" = "N" ]; then
     echo "Skipping installation of Final Fantasy XIV Launcher."
 else
