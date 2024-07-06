@@ -117,3 +117,5 @@ elif [ "$choice" = "N" ]; then
 else
     echo "Invalid choice. Please enter 'Y' or 'N'."
 fi
+
+echo "YOU CAN NOW CLOSE THE TERMINAL"
