@@ -36,6 +36,20 @@ winetricks win11
 # Install components using winetricks
 winetricks --force dotnet48 vcrun2015 corefonts
 
+# Define source and destination paths
+SOURCE_DIR="$HOME/bash.game-suite/.wineAffinity/WinMetaData"
+DEST_DIR="$HOME/.wineAffinity"
+
+# Check if source directory exists
+if [ -d "$SOURCE_DIR" ]; then
+    # Move WinMetaData to .wineAffinity directory
+    mv -v "$SOURCE_DIR" "$DEST_DIR"
+    echo "Successfully moved WinMetaData to $DEST_DIR"
+else
+    echo "Source directory $SOURCE_DIR does not exist or is not a directory."
+    exit 1
+fi
+
 # Verify the installations
 echo "Verifying installations..."
 wine --version
