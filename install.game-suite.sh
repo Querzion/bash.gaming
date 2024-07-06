@@ -11,6 +11,8 @@ else
     echo "vm.max_map_count is already sufficient: $current_value"
 fi
 
+#############################################################################
+#############################################################################
 
 ########### WINE & WineTricks
 echo "Do you want to install Wine & WineTricks? (Y/N)"
@@ -18,7 +20,7 @@ read choice
 
 if [ "$choice" = "Y" ]; then
     echo "Starting installation of Wine & WineTricks..."
-    ./install.wine.sh
+    ./scripts/install.wine.sh
 elif [ "$choice" = "N" ]; then
     echo "Skipping installation of Wine & WineTricks."
 else
@@ -31,7 +33,7 @@ read choice
 
 if [ "$choice" = "Y" ]; then
     echo "Starting installation of Lutris..."
-    ./install.lutris.sh
+    ./scripts/install.lutris.sh
 elif [ "$choice" = "N" ]; then
     echo "Skipping installation of Lutris."
 else
@@ -44,7 +46,7 @@ read choice
 
 if [ "$choice" = "Y" ]; then
     echo "Starting installation of Heroic Launcher..."
-    ./install.heroic.sh
+    ./scripts/install.heroic.sh
 elif [ "$choice" = "N" ]; then
     echo "Skipping installation of Heroic Launcher."
 else
@@ -57,7 +59,7 @@ read choice
 
 if [ "$choice" = "Y" ]; then
     echo "Starting installation of Steam, Proton-GE & ProtonTricks..."
-    ./install.steamup.sh
+    ./scripts/install.steam.sh
 elif [ "$choice" = "N" ]; then
     echo "Skipping installation of Steam, Proton-GE & ProtonTricks."
 else
@@ -70,7 +72,7 @@ read choice
 
 if [ "$choice" = "Y" ]; then
     echo "Starting installation of Final Fantasy XIV Launcher..."
-    ./install.ffxiv.sh
+    ./scripts/install.ffxiv.sh
 elif [ "$choice" = "N" ]; then
     echo "Skipping installation of Final Fantasy XIV Launcher."
 else
@@ -83,7 +85,7 @@ read choice
 
 if [ "$choice" = "Y" ]; then
     echo "Starting installation of Final Fantasy XIV Launcher..."
-    ./install.starcitizen.sh
+    ./scripts/install.starcitizen.sh
 elif [ "$choice" = "N" ]; then
     echo "Skipping installation of Final Fantasy XIV Launcher."
 else
@@ -96,7 +98,7 @@ read choice
 
 if [ "$choice" = "Y" ]; then
     echo "Starting installation of EmuDeck..."
-    ./install.emudeck.sh
+    ./scripts/install.emudeck.sh
 elif [ "$choice" = "N" ]; then
     echo "Skipping installation of EmuDeck."
 else
@@ -109,7 +111,7 @@ read choice
 
 if [ "$choice" = "Y" ]; then
     echo "Starting installation of Pegasus Launcher..."
-    ./install.pegasus.sh
+    ./scripts/install.pegasus.sh
 elif [ "$choice" = "N" ]; then
     echo "Skipping installation of Pegasus Launcher."
 else
