@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Check which package manager is available
 if command -v apt-get &> /dev/null; then
     # Debian/Ubuntu based systems
