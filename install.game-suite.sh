@@ -142,7 +142,7 @@ read choice
 
 if [ "$choice" = "Y" ]; then
     echo "Starting installation of Pegasus Launcher..."
-    ./scripts/install.pegasus.sh
+    flatpak install flathub io.github.pegasus_frontend.Pegasus
 elif [ "$choice" = "N" ]; then
     echo "Skipping installation of Pegasus Launcher."
 else
