@@ -19,3 +19,18 @@ else
     echo "Unsupported distribution. Exiting."
     exit 1
 fi
+
+# Setup Wineprefix
+WINEPREFIX=~/.wineAffinity
+mkdir -p $WINEPREFIX
+export WINEPREFIX
+
+# Install components using winetricks
+winetricks --force dotnet48 vcrun2015 corefonts
+
+# Verify the installations
+echo "Verifying installations..."
+wine --version
+winetricks list-installed
+
+echo "Setup complete."
