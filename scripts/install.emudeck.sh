@@ -7,7 +7,7 @@ if command -v apt-get &> /dev/null; then
     sudo apt-get update
     sudo apt-get install -y git python3 python3-pip
     curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-    sudo apt install nodejs
+    sudo apt install nodejs npm
     
     # Function to install EmuDeck
     install_emudeck() {
@@ -52,7 +52,7 @@ elif command -v dnf &> /dev/null; then
     echo "Detected DNF package manager."
     sudo dnf install python3 python3-pip
     curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo -E bash -
-    sudo dnf install nodejs
+    sudo dnf install nodejs npm
 
     # Function to install EmuDeck
     install_emudeck() {
