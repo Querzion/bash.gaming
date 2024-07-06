@@ -62,7 +62,7 @@ read choice
 
 if [ "$choice" = "Y" ]; then
     echo "Starting installation of Lutris..."
-    ./scripts/install.lutris.sh
+    flatpak install flathub net.lutris.Lutris
 elif [ "$choice" = "N" ]; then
     echo "Skipping installation of Lutris."
 else
