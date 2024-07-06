@@ -89,6 +89,8 @@ read choice
 if [ "$choice" = "Y" ]; then
     echo "Starting installation of Steam, Proton-GE & ProtonTricks..."
     ./scripts/install.steam.sh
+    flatpak install flathub org.gabmus.protonupqt com.github.Matoking.protontricks
+
 elif [ "$choice" = "N" ]; then
     echo "Skipping installation of Steam, Proton-GE & ProtonTricks."
 else
@@ -143,6 +145,32 @@ if [ "$choice" = "Y" ]; then
     ./scripts/install.pegasus.sh
 elif [ "$choice" = "N" ]; then
     echo "Skipping installation of Pegasus Launcher."
+else
+    echo "Invalid choice. Please enter 'Y' or 'N'."
+fi
+
+########### OBS-STUDIO
+echo "Do you want to install OBS-Studio? (Y/N)"
+read choice
+
+if [ "$choice" = "Y" ]; then
+    echo "Starting installation of OBS-Studio..."
+    flatpak install flathub com.obsproject.Studio
+elif [ "$choice" = "N" ]; then
+    echo "Skipping installation of OBS-Studio."
+else
+    echo "Invalid choice. Please enter 'Y' or 'N'."
+fi
+
+########### DISCORD
+echo "Do you want to install Discord? (Y/N)"
+read choice
+
+if [ "$choice" = "Y" ]; then
+    echo "Starting installation of Discord..."
+    flatpak install flathub com.discordapp.Discord
+elif [ "$choice" = "N" ]; then
+    echo "Skipping installation of Discord."
 else
     echo "Invalid choice. Please enter 'Y' or 'N'."
 fi
