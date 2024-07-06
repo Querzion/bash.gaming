@@ -23,7 +23,7 @@ else
 fi
 
 # Setup Wineprefix
-WINEPREFIX=~/.wineprefix
+WINEPREFIX=~/.wineAffinity
 mkdir -p $WINEPREFIX
 export WINEPREFIX
 
