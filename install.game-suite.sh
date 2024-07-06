@@ -56,6 +56,19 @@ else
     echo "Invalid choice. Please enter 'Y' or 'N'."
 fi
 
+########### GOverlay, Mangohud & Game-Mode
+echo "Do you want to install GOverlay, Mangohud & Game-Mode? (Y/N)"
+read choice
+
+if [ "$choice" = "Y" ]; then
+    echo "Starting installation of GOverlay, Mangohud & Game-Mode..."
+    ./scripts/install.stats.sh
+elif [ "$choice" = "N" ]; then
+    echo "Skipping installation of GOverlay, Mangohud & Game-Mode."
+else
+    echo "Invalid choice. Please enter 'Y' or 'N'."
+fi
+
 ########### LUTRIS
 echo "Do you want to install Lutris (Needs WINE!)? (Y/N)"
 read choice
