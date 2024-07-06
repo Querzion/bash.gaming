@@ -70,6 +70,21 @@ else
     echo "Invalid choice. Please enter 'Y' or 'N'."
 fi
 
+########### STAR CITIZEN - LUTRIS INSTALL
+echo "Do you want to install Star Citizen with Lutris? (Y/N)"
+read choice
+
+if [ "$choice" = "Y" ]; then
+    echo "Starting installation of Star Citizen..."
+    lutris install lutris:star-citizen-liveptu
+
+    
+elif [ "$choice" = "N" ]; then
+    echo "Skipping installation of Star Citizen Lutris Install."
+else
+    echo "Invalid choice. Please enter 'Y' or 'N'."
+fi
+
 ########### HEROIC
 echo "Do you want to install Heroic (Epic & GOG) Launcher? (Y/N)"
 read choice
@@ -166,6 +181,7 @@ fi
 ########### STAR CITIZEN
 echo "THIS IS THE LAST PART OF THE SCRIPT QUESTIONS!"
 echo "Do you want to install Star Citizen? (Y/N)"
+echo "If you installed through Lutris press (N) "
 read choice
 
 if [ "$choice" = "Y" ]; then
