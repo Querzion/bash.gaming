@@ -7,14 +7,13 @@ This script is not done or tested yet. EmuDeck install is in need of getting fix
 
 ## Installation Process
 ```bash
-git clone https://github.com/querzion/bash.game-suite.git
+git clone https://github.com/querzion/bash.game-suite.git ~/game-suite
 ```
 ```bash
-cd bash.game-suite
+chmod +x -R ~/game-suite
 ```
 ```bash
-chmod +x install.game-suite.sh
-chmod +x -R /scripts
+cd game-suite
 ```
 ```bash
 ./install.game-suite.sh
