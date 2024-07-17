@@ -3,6 +3,34 @@
 RED='\033[0;31m' # ANSI red color code
 NC='\033[0m'     # ANSI reset code
 
+
+enable_multilib() {
+    local pacman_conf="/etc/pacman.conf"
+    
+    if [ ! -f "$pacman_conf" ]; then
+        echo "Error: $pacman_conf not found."
+        return 1
+    fi
+
+    # Check if the multilib section is already uncommented
+    if grep -q '^\[multilib\]' "$pacman_conf"; then
+        echo "Multilib repository is already enabled."
+        return 0
+    fi
+
+    # Backup the original pacman.conf
+    sudo cp "$pacman_conf" "${pacman_conf}.bak"
+
+    # Uncomment the multilib section
+    sudo sed -i '/#\[multilib\]/{s/^#//;n;s/^#//}' "$pacman_conf"
+
+    echo "Multilib repository has been enabled."
+    return 0
+}
+
+# Call the function
+enable_multilib
+
 # Get the current value of map_max_count
 current_value=$(sysctl -n vm.max_map_count)
 
