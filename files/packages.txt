@@ -1,0 +1,13 @@
+##### Gaming Applications
+"flatpak" "flathub/com.valvesoftware.Steam" # Game platform
+"flatpak" "flathub/net.lutris.Lutris" # Game manager
+"pacman" "wine" # Windows compatibility layer
+"pacman" "wine-tricks" # Wine tweak tool
+"flatpak" "flathub/com.heroicgameslauncher.hgl" # Epic & GOG Games launcher
+"flatpak" "flathub/net.davidotek.pupgui2" # Proton GE for gaming
+"flatpak" "flathub/com.github.Matoking.protontricks" # Proton tweak tool
+#"pacman" "emudeck" # EmuDeck for emulation
+"pacman" "gamescope" # Game session manager
+"pacman" "gamemode" # Gaming performance manager
+"pacman" "mangohud" # Performance overlay
+"flatpak" "flathub/dev.goats.xivlauncher" # Final Fantasy XIV Game Launcher
