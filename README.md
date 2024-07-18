@@ -28,7 +28,8 @@ sh $HOME/bash.gaming/installer.sh
   -  Maybe Star Citizen (Manual Install (video guide)) 
 
 ### Configures 
-  -  max_map_count 
+  -  max_map_count
+  -  WINEPREFIX 
 
 # DISCLAIMER!
 This script is not done or tested yet. EmuDeck install is in need of getting fixed, it's just a skeleton right now.
