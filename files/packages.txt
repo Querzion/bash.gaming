@@ -14,3 +14,8 @@
 "pacman" "python-pip" # Python package installer
 "pacman" "nodejs" # Node.js JavaScript runtime
 "pacman" "npm" # Node.js package manager
+"pacman" "base-devel" # Base development tools and libraries
+"pacman" "git" # Version control system
+"paru" "mangohud" # MangoHud for displaying performance metrics in games
+"paru" "goverlay-bin" # GoOverlay for managing Vulkan overlays
+"pacman" "game-mode" # GameMode for optimizing gaming performance
