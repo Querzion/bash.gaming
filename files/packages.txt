@@ -1,4 +1,3 @@
-##### Gaming Applications
 "flatpak" "flathub/com.valvesoftware.Steam" # Game platform
 "flatpak" "flathub/net.lutris.Lutris" # Game manager
 "pacman" "wine" # Windows compatibility layer
@@ -11,3 +10,7 @@
 "pacman" "gamemode" # Gaming performance manager
 "pacman" "mangohud" # Performance overlay
 "flatpak" "flathub/dev.goats.xivlauncher" # Final Fantasy XIV Game Launcher
+"pacman" "python" # Python programming language
+"pacman" "python-pip" # Python package installer
+"pacman" "nodejs" # Node.js JavaScript runtime
+"pacman" "npm" # Node.js package manager
