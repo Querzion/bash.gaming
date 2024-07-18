@@ -5,7 +5,6 @@
 "flatpak" "flathub/com.heroicgameslauncher.hgl" # Epic & GOG Games launcher
 "flatpak" "flathub/net.davidotek.pupgui2" # Proton GE for gaming
 "flatpak" "flathub/com.github.Matoking.protontricks" # Proton tweak tool
-#"pacman" "emudeck" # EmuDeck for emulation
 "pacman" "gamescope" # Game session manager
 "pacman" "gamemode" # Gaming performance manager
 "pacman" "mangohud" # Performance overlay
