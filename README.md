@@ -20,12 +20,12 @@ sh $HOME/bash.gaming/installer.sh
   -  MangoHUD
   -  GameMode
   -  GameScope
-  -  EMUDeck
   -  FFXIV Launcher
   -  Chatterino
   -  OBS Studio
   -  OBS Plugins
-  -  Maybe Star Citizen (Manual Install (video guide)) 
+  -  EMUDeck (Questioned About)
+  -  Star Citizen (Questioned About) 
 
 ### Configures 
   -  max_map_count
