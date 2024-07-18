@@ -98,6 +98,39 @@ setup_wineprefix() {
     print_message "${GREEN}" "Wine setup complete."
 }
 
+install_emudeck() {
+    print_message "${CYAN}" "Do you want to download and install EmuDeck? (y/n): "
+    read answer
+    if [[ $answer =~ ^[Yy]$ ]]; then
+        print_message "${YELLOW}" "Downloading EmuDeck.sh..."
+        wget -qO ~/EmuDeck.sh https://www.emudeck.com/EmuDeck.sh
+        if [ $? -eq 0 ]; then
+            print_message "${GREEN}" "EmuDeck.sh downloaded successfully."
+            print_message "${YELLOW}" "Executing EmuDeck.sh..."
+            bash ~/EmuDeck.sh
+        else
+            print_message "${RED}" "Failed to download EmuDeck.sh. Exiting."
+        fi
+    else
+        print_message "${PURPLE}" "Installation aborted."
+    fi
+}
+
+install_pegasus() {
+    print_message "${CYAN}" "Do you want to install Pegasus (Flatpak from Flathub)? (y/n): "
+    read answer
+    if [[ $answer =~ ^[Yy]$ ]]; then
+        print_message "${YELLOW}" "Installing Pegasus from Flathub..."
+        flatpak install flathub org.pegasus_frontend.Pegasus -y
+        if [ $? -eq 0 ]; then
+            print_message "${GREEN}" "Pegasus installed successfully."
+        else
+            print_message "${RED}" "Failed to install Pegasus. Exiting."
+        fi
+    else
+        print_message "${PURPLE}" "Installation aborted."
+    fi
+}
 
 ################################################################################################## MAIN LOGIC
 
@@ -134,5 +167,7 @@ else
     print_message "${RED}" "Invalid choice. Please enter 'Y' or 'N'."
 fi
 
+install_emudeck
+install_pegasus
 
-echo "YOU CAN NOW CLOSE THE TERMINAL"
+print_message "${PURPLE}" "YOU CAN NOW CLOSE THE TERMINAL"
