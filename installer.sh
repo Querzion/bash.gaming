@@ -61,6 +61,43 @@ packages_txt() {
     print_message "$GREEN" "Applications installed successfully."
 }
 
+setup_wineprefix() {
+    # Setup Wineprefix
+    local WINEPREFIX="$HOME/.wineprefix"
+    mkdir -p "$WINEPREFIX"
+    export WINEPREFIX
+
+    # Initialize Wineprefix
+    wineboot --init
+
+    # Configure Wineprefix to Windows 11 using winetricks
+    winetricks win11
+
+    # Install components using winetricks
+    winetricks --force dotnet35sp1 dotnet48 vcrun2015 corefonts
+
+    # Define source and destination paths
+    local SOURCE_DIR="$FILES/.wineprefix/WinMetaData"
+    local DEST_DIR="$HOME/.wineprefix"
+
+    # Check if source directory exists
+    if [ -d "$SOURCE_DIR" ]; then
+        # Move WinMetaData to .wineprefix directory
+        mv -v "$SOURCE_DIR" "$DEST_DIR"
+        print_message "${GREEN}" "Successfully moved WinMetaData to $DEST_DIR"
+    else
+        print_message "${RED}" "Source directory $SOURCE_DIR does not exist or is not a directory."
+        return 1
+    fi
+
+    # Verify the installations
+    print_message "${CYAN}" "Verifying installations..."
+    wine --version
+    winetricks list-installed
+
+    print_message "${GREEN}" "Setup complete."
+}
+
 
 ################################################################################################## MAIN LOGIC
 
