@@ -1,12 +1,12 @@
 # bash.game-suite
 ```bash
-git clone https://github.com/Querzion/bash.game-suite.git $HOME
+git clone https://github.com/Querzion/bash.gaming.git $HOME
 ```
 ```bash
-chmod +x -r $HOME/bash.game-suite
+chmod +x -r $HOME/bash.gaming
 ```
 ```bash
-sh $HOME/bash.game-suite/installer.sh
+sh $HOME/bash.gaming/installer.sh
 ```
 
 # Installation of 
