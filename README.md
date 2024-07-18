@@ -14,9 +14,17 @@ sh $HOME/bash.gaming/installer.sh
   -  Heroic
   -  Lutris
   -  Wine
+  -  Winetricks
   -  Proton GE
+  -  Protontricks
+  -  MangoHUD
+  -  GameMode
+  -  GameScope
   -  EMUDeck
   -  FFXIV Launcher
+  -  Chatterino
+  -  OBS Studio
+  -  OBS Plugins
   -  Maybe Star Citizen (Manual Install (video guide)) 
 
 ### Configures 
