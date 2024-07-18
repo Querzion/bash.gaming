@@ -18,4 +18,4 @@
 "paru" "mangohud" # MangoHud for displaying performance metrics in games
 "paru" "goverlay-bin" # GoOverlay for managing Vulkan overlays
 "pacman" "game-mode" # GameMode for optimizing gaming performance
-"flatpak" "flathub/org.pegasus_frontend.Pegasus" # Pegasus frontend for game library management
+#"flatpak" "flathub/org.pegasus_frontend.Pegasus" # Pegasus frontend for game library management
