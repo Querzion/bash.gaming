@@ -91,11 +91,11 @@ setup_wineprefix() {
     fi
 
     # Verify the installations
-    print_message "${CYAN}" "Verifying installations..."
+    print_message "${CYAN}" "Verifying Wine installations..."
     wine --version
     winetricks list-installed
 
-    print_message "${GREEN}" "Setup complete."
+    print_message "${GREEN}" "Wine setup complete."
 }
 
 
