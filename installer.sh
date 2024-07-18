@@ -1,35 +1,70 @@
 #!/bin/bash
 
-RED='\033[0;31m' # ANSI red color code
-NC='\033[0m'     # ANSI reset code
+############ COLOURED BASH TEXT
+
+# ANSI color codes
+RED='\033[0;31m'
+YELLOW='\033[0;33m'
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+PURPLE='\033[0;35m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
 
 
-enable_multilib() {
-    local pacman_conf="/etc/pacman.conf"
-    
-    if [ ! -f "$pacman_conf" ]; then
-        echo "Error: $pacman_conf not found."
-        return 1
-    fi
+################################################################################################## FILE & FOLDER PATHS
 
-    # Check if the multilib section is already uncommented
-    if grep -q '^\[multilib\]' "$pacman_conf"; then
-        echo "Multilib repository is already enabled."
-        return 0
-    fi
+# Location
+APPLICATION="gaming"
+BASE="$HOME/bash.$APPLICATION"
+FILES="$BASE/files"
+APP_LIST="$FILES/packages.txt"
 
-    # Backup the original pacman.conf
-    sudo cp "$pacman_conf" "${pacman_conf}.bak"
+# Pre-Configuration
+BASH="$HOME/order_66"
 
-    # Uncomment the multilib section
-    sudo sed -i '/#\[multilib\]/{s/^#//;n;s/^#//}' "$pacman_conf"
 
-    echo "Multilib repository has been enabled."
-    return 0
+################################################################################################## PRINT MESSAGE
+
+# Function to print colored messages
+print_message() {
+    local COLOR=$1
+    local MESSAGE=$2
+    echo -e "${COLOR}${MESSAGE}${NC}"
 }
 
-# Call the function
-enable_multilib
+
+################################################################################################## INSTALLATION FUNCTIONS
+
+packages_txt() {
+    # Check if $HOME/bash directory exists, if not create it
+    if [ ! -d "$BASH" ]; then
+        mkdir -p "$BASH"
+        print_message "$GREEN" "Created directory: $BASH"
+    fi
+    
+    # Check if $HOME/bash.pkmgr exists, delete it if it does
+    if [ -d "$HOME/bash.pkmgr" ]; then
+        print_message "$YELLOW" "Removing existing $HOME/bash.pkmgr"
+        rm -rf "$HOME/bash.pkmgr"
+    fi
+    
+    # Copy ../files/packages.txt to /home/user/bash
+    cp "$APP_LIST" "$BASH"
+    print_message "$CYAN" "Copied $APP_LIST to $BASH"
+    
+    # Get the Package Manager & Package Installer
+    git clone https://github.com/Querzion/bash.pkmgr.git "$HOME/bash.pkmgr"
+    chmod +x -R "$HOME/bash.pkmgr"
+    sh "$HOME/bash.pkmgr/installer.sh"
+    
+    print_message "$GREEN" "Applications installed successfully."
+}
+
+
+################################################################################################## MAIN LOGIC
+
+packages_txt
 
 # Get the current value of map_max_count
 current_value=$(sysctl -n vm.max_map_count)
@@ -42,37 +77,6 @@ else
     echo "vm.max_map_count is already sufficient: $current_value"
 fi
 
-########### FLATPAK PREREQUSITE
-# Set up Flatpak
-echo "Setting up Flatpak..."
-
-# Check which package manager is available
-if command -v apt-get &> /dev/null; then
-    # Debian/Ubuntu based systems
-    echo "Detected APT package manager."
-    sudo apt-get update
-    sudo apt-get install -y flatpak
-
-elif command -v dnf &> /dev/null; then
-    # Fedora
-    echo "Detected DNF package manager."
-    sudo dnf install -y flatpak
-
-elif command -v pacman &> /dev/null; then
-    # Arch Linux
-    echo "Detected Pacman package manager."
-    sudo pacman -Syu --noconfirm flatpak
-
-else
-    echo "Unsupported distribution. Exiting."
-    exit 1
-fi
-
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-echo "Flatpak installed and set up successfully."
-
-#############################################################################
 
 ########### WINE & WineTricks
 echo "Do you want to install Wine & WineTricks? (Y/N)"
